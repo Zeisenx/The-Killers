@@ -831,7 +831,7 @@ def server_idle():
     if hostport != 27100:
         es.ServerCommand('rcon_address 1.214.121.137:27100')
         es.ServerCommand('rcon es_xset res_%s_state idle' %(sv('hostport')))
-        es.ServerCommand('sv_password idleserverhahaha')
+        es.ServerCommand('sv_password %02X' %(random.randint(10000,99999)))
         es.set("server_state", "idle")
 
 def server_wait():
